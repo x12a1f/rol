@@ -13,8 +13,6 @@ the cable clamp do not have any way of mounting them.
 
 See the basic usage example for a version with mounting holes.
 
-![cable clamps](img/cableclamp_usage.png)
-
 ![cable clamps](img/cableclamp_example.jpg)
 
 ## Requires:
@@ -23,8 +21,13 @@ See the basic usage example for a version with mounting holes.
 
 ## See also:
 
-- Basic usage example: [cableclamp_usage.scad](../cableclamp_usage.scad)
-- More elaborate test and dimensions: [cableclamp_test.scad](../cableclamp_test.scad)
+![cable clamps](img/cableclamp_usage.png)
+
+Basic usage example: [cableclamp_usage.scad](../rol-usage/cableclamp_usage.scad)
+
+![dimensions from cableclamp_test.scad](img/cableclamp_test.png)
+
+More elaborate test and dimensions: [cableclamp_test.scad](../rol-usage/cableclamp_test.scad)
 
 ## Global variables
 
@@ -255,8 +258,6 @@ argument to all other functions/modules.
 
 For more details about the dimensions, render the cableclamp_test.scad or see 
 the "drawings" and examples below.
-
-![dimensions from cableclamp_test.scad](img/cableclamp_test.png)
 
 ```
 single clamp
