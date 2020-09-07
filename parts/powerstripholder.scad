@@ -37,6 +37,7 @@ These are holders to mount a power strip onto something.
 
 # See also:
 
+* [Thingiverse](https://www.thingiverse.com/thing:4590509)
 * Code: [powerstripholder.scad](../parts/powerstripholder.scad)
 
 # Requires
