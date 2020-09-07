@@ -4,13 +4,22 @@ This is a collection of parts I developed for various purposes.
 
 * `rol` : folder with library files
 * `rol-usage` : usage examples for the library files
+* `parts` : folder with stand alone parts
 * `doc` : documentation
 
 # Contents
 
+## Library parts
+
 ![cable clamps](doc/img/cableclamp_usage_small.png)
 
-[Cable Clamps](doc/cableclamp.md)
+[cable clamps](doc/cableclamp.md)
+
+## Stand alone parts
+
+![power strip holder](doc/img/powerstripholder_small.png)
+
+[power strip holder](doc/powerstripholder.md)
 
 # License
 
