@@ -77,7 +77,7 @@ color("red") {
     p1=hole1,
     dx=default[CC_IDX_NUT],
     txt="screw",
-    direction=DIM_BACK,
+    d=DIM_BACK,
     offset=base_size.y/2+5
   );
   dim(
@@ -103,14 +103,14 @@ color("red") {
     p1=[offset+clip_size.x,0,clip_z],
     p2=[offset+clip_size.x,0,clip_z+clip_size.z],
     txt="clip_height",
-    direction=DIM_RIGHT
+    d=DIM_RIGHT
   );
   
   dim(
     p1=[offset+clip_size.x,0,clip_z-cutout],
     p2=[offset+clip_size.x,0,clip_z],
     txt="cutout",
-    direction=DIM_RIGHT,
+    d=DIM_RIGHT,
     offset=8
   );
   
