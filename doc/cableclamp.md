@@ -15,13 +15,13 @@ See the basic usage example for a version with mounting holes.
 
 ## See also:
 
+* [Thingiverse](https://www.thingiverse.com/thing:4589487)
+* Basic usage example: [cableclamp_usage.scad](../rol-usage/cableclamp_usage.scad)
+* More elaborate test and dimensions: [cableclamp_test.scad](../rol-usage/cableclamp_test.scad)
+
 ![cable clamps](img/cableclamp_usage.png)
 
-Basic usage example: [cableclamp_usage.scad](../rol-usage/cableclamp_usage.scad)
-
 ![dimensions from cableclamp_test.scad](img/cableclamp_test.png)
-
-More elaborate test and dimensions: [cableclamp_test.scad](../rol-usage/cableclamp_test.scad)
 
 ## Global variables
 
