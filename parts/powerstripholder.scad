@@ -3,9 +3,51 @@
 // To view a copy of this license, visit
 // http://creativecommons.org/licenses/by-sa/4.0/.
 
+//
+// EXAMPLE
+//
+// If you set part to 'example' and have the relevant libraries installed,
+// an example power strip with holders and dimension lines is rendered.
+// This is not supported on the thingiverse customizer.
+//
+
+// which side
+part="both"; // [blind:The side without cable,cable:The side with cable,both:Both sides]
+
+// width of the power strip
+width=55;
+
+// height of the power strip
+height=41;
+
+// overhang
+overhang=9;
+
+// wall thickness
+wall=2;
+
+// length of the feet
+length=25;
+
+// width of the feet
+base=10;
+
+// diameter of the hole for the cable
+cable=32;
+
+// offset of the cable hole from the bottom
+cable_center=20;
+
+// size of the screw holes
+screw=4.2;
+
+// show the example
+
+
 use <BOSL/shapes.scad>
 include <../rol/dimension.scad>
 
+/* [Hidden] */
 $fn=0;
 $fa=0.01;
 $fs=0.5;
@@ -14,18 +56,76 @@ $fs=0.5;
 // example
 //
 
-// two holders to hold a typical power strip
-translate([-54,0,0]) rotate([0,0,180]) holder();
-translate([54,0,0]) {
-  holder(cable=32);
+if (part == "blind") {
+  holder(
+    width=width,
+    height=height,
+    overhang=overhang,
+    wall=wall,
+    length=length,
+    base=base,
+    cable=undef,
+    screw=screw
+  );
 }
+else if (part == "cable") {
+  holder(
+    width=width,
+    height=height,
+    overhang=overhang,
+    wall=wall,
+    length=length,
+    base=base,
+    cable=cable,
+    cable_center=cable_center,
+    screw=screw
+  );
+}  
+else if (part == "both") {
+  rotate([0,0,180]) {
+    holder(
+      width=width,
+      height=height,
+      overhang=overhang,
+      wall=wall,
+      length=length,
+      base=base,
+      cable=undef,
+      screw=screw
+    );
+  }
+  
+  translate([10,0,0]) {
+    holder(
+      width=width,
+      height=height,
+      overhang=overhang,
+      wall=wall,
+      length=length,
+      base=base,
+      cable=cable,
+      cable_center=cable_center,
+      screw=screw
+    );
+  }
+}
+else if (part == "example") {  
+  // two holders to hold a typical power strip
+  translate([-54,0,0]) {
+    rotate([0,0,180]) {
+      holder();
+    }
+  }
+  translate([54,0,0]) {
+    holder(cable=32);
+  }
 
-// power strip (only visible in preview)
-%powerstrip();
+  // power strip
+  powerstrip();
 
-// dimensions (only visible in preview)
-%dimensions();
-
+  // dimensions
+  dimensions();
+}
 
 /**
 # Power strip holder.
