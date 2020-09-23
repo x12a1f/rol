@@ -82,31 +82,35 @@ else if (part == "cable") {
   );
 }  
 else if (part == "both") {
-  rotate([0,0,180]) {
-    holder(
-      width=width,
-      height=height,
-      overhang=overhang,
-      wall=wall,
-      length=length,
-      base=base,
-      cable=undef,
-      screw=screw
-    );
+  translate([0,0,length]) {
+    rotate([0,90,0]) {
+      holder(
+        width=width,
+        height=height,
+        overhang=overhang,
+        wall=wall,
+        length=length,
+        base=base,
+        cable=undef,
+        screw=screw
+      );
+    }
   }
   
-  translate([10,0,0]) {
-    holder(
-      width=width,
-      height=height,
-      overhang=overhang,
-      wall=wall,
-      length=length,
-      base=base,
-      cable=cable,
-      cable_center=cable_center,
-      screw=screw
-    );
+  translate([height+10,0,length]) {
+    rotate([0,90,0]) {
+      holder(
+        width=width,
+        height=height,
+        overhang=overhang,
+        wall=wall,
+        length=length,
+        base=base,
+        cable=cable,
+        cable_center=cable_center,
+        screw=screw
+      );
+    }
   }
 }
 else if (part == "example") {  
