@@ -4,11 +4,19 @@
 // http://creativecommons.org/licenses/by-sa/4.0/.
 
 //
-// EXAMPLE
+// HOW TO RENDER THE EXAMPLE
 //
-// If you set part to 'example' and have the relevant libraries installed,
-// an example power strip with holders and dimension lines is rendered.
-// This is not supported on the thingiverse customizer.
+// If you set the part variable below to 'example' and have the 
+// relevant libraries installed, an example power strip with 
+// holders and dimension lines is rendered.
+// This is not supported on the Thingiverse customizer.
+//
+
+//
+// Thingiverse customizer variables:
+//
+// See the documentation (for the powerstripholder module below) 
+// or render the example for more information.
 //
 
 // which side
@@ -41,9 +49,12 @@ cable_center=20;
 // size of the screw holes
 screw=4.2;
 
-// show the example
+//
+// end of customizer variables
+//
 
-
+// these libraries are only used to render the example 
+//   (when part == 'example')
 use <BOSL/shapes.scad>
 include <../rol/dimension.scad>
 
@@ -53,11 +64,11 @@ $fa=0.01;
 $fs=0.5;
 
 //
-// example
+// select which part to render
 //
 
 if (part == "blind") {
-  holder(
+  powerstripholder(
     width=width,
     height=height,
     overhang=overhang,
@@ -69,7 +80,7 @@ if (part == "blind") {
   );
 }
 else if (part == "cable") {
-  holder(
+  powerstripholder(
     width=width,
     height=height,
     overhang=overhang,
@@ -84,7 +95,7 @@ else if (part == "cable") {
 else if (part == "both") {
   translate([0,0,length]) {
     rotate([0,90,0]) {
-      holder(
+      powerstripholder(
         width=width,
         height=height,
         overhang=overhang,
@@ -99,7 +110,7 @@ else if (part == "both") {
   
   translate([height+10,0,length]) {
     rotate([0,90,0]) {
-      holder(
+      powerstripholder(
         width=width,
         height=height,
         overhang=overhang,
@@ -117,18 +128,18 @@ else if (part == "example") {
   // two holders to hold a typical power strip
   translate([-54,0,0]) {
     rotate([0,0,180]) {
-      holder();
+      powerstripholder();
     }
   }
   translate([54,0,0]) {
-    holder(cable=32);
+    powerstripholder(cable=32);
   }
 
   // power strip
-  powerstrip();
+  powerstripholder_powerstrip();
 
   // dimensions
-  dimensions();
+  powerstripholder_dimensions();
 }
 
 /**
@@ -165,7 +176,7 @@ These are holders to mount a power strip onto something.
 ![dimensions](img/powerstripholder_dimensions.png)
 
 **/
-module holder(
+module powerstripholder(
   width=55,
   height=41,
   overhang=9,
@@ -244,7 +255,7 @@ module holder(
 /*
 Render the dimensions used by holder()
 */
-module dimensions() {
+module powerstripholder_dimensions() {
   dim(p1=[-79+9,-55/2,41], p2=[-79+9,55/2,41], txt="width",offset=10,size=3,d=DIM_UP);
   dim(p1=[-79+9,-55/2,0], p2=[-79+9,-55/2,41], txt="height",offset=25,size=3,d=DIM_RIGHT);
   dim(p1=[-79,58/2,43], p2=[-79+9,58/2,43], txt="overhang",size=3,d=DIM_BACK);
@@ -260,7 +271,7 @@ Render a powerstrip for visualisation purposes only.
 
 Uses code from https://www.thingiverse.com/thing:2251788
 */
-module powerstrip() {    
+module powerstripholder_powerstrip() {    
   translate([0,0,20]) {
     color("WhiteSmoke")  {    
       difference() {
